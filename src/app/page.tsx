@@ -5,7 +5,7 @@ import Navigation from "./components/Navigation";
 import HeroSection from "./components/HeroSection";
 import ProjectsSection from "./components/ProjectsSection";
 import AboutSection from "./components/AboutSection";
-import SpaceField from "./components/SpaceField"; // novo componente (estrelas + cometas)
+import SpaceField from "./components/SpaceField"; 
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("home");
