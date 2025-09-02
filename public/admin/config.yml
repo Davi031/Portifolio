@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main # ou master, dependendo do seu repo
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "projects"
+    label: "Projetos"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "ID", name: "id", widget: "number" }
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Tipo", name: "type", widget: "select", options: ["empresas","pessoais","jogos"] }
+      - { label: "GIF", name: "gif", widget: "string" }
+      - { label: "Descrição", name: "description", widget: "text" }
+      - { label: "Tecnologias", name: "technologies", widget: "list" }
+      - { label: "Link", name: "link", widget: "string" }

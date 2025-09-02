@@ -1,26 +1,64 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .stacked-text {
+    white-space: pre-wrap;
+    text-align: left;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #04001C;
+}
+
+/* Animações para as estrelas */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+/* Animação para cometas */
+@keyframes cometMove {
+  0% {
+    transform: translate(0, 0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-500px, 500px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .stacked-text {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+
+/* Garantir que o fundo fique escuro */
+html, body {
+  background-color: #04001C;
+}
+
+/* Melhorar a visualização das estrelas */
+img[src="/images/Polygon 1.svg"] {
+  filter: brightness(1.2);
+  pointer-events: none;
 }
